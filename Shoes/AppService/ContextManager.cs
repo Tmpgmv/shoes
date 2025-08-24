@@ -1,4 +1,5 @@
-﻿using Shoes.AppModels;
+﻿using Shoes.AppForms;
+using Shoes.AppModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,9 @@ namespace Shoes.AppService
 {
     internal class ContextManager
     {
-        //public static User user; //  = Program.context.User.Where(u=>u.Login=="guest").FirstOrDefault()
-        //public static ParentForm parentForm;
-
-        public static void renewFullName()
-        {
-            //parentForm.setFullName("");
-        }
+        public static User user; 
+        public static ParentForm parentForm;
+        public static LoginForm loginForm;
     }
 
     

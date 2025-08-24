@@ -17,16 +17,22 @@ namespace Shoes.AppForms
         public LoginForm()
         {
             InitializeComponent();
+            ContextManager.parentForm.setTitle("Вход");
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
             try {
-                AuthManager.login(loginTextBox.Text, passwordTextBox.Text);
+                AuthManager.login(loginTextBox.Text, passwordTextBox.Text, this);
             }
             catch (UnauthorizedException ex) {
                 MessageBox.Show(ex.Message, ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void guestButton_Click(object sender, EventArgs e)
+        {
+            AuthManager.login("guest", "guest", this);            
         }
     }
 }

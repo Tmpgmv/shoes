@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.loginTextBox = new System.Windows.Forms.TextBox();
+            this.guestButton = new System.Windows.Forms.Button();
+            this.loginButton = new System.Windows.Forms.Button();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
-            this.loginButton = new System.Windows.Forms.Button();
-            this.guestButton = new System.Windows.Forms.Button();
+            this.loginTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,21 +51,27 @@
             this.panel2.Size = new System.Drawing.Size(800, 376);
             this.panel2.TabIndex = 1;
             // 
-            // label1
+            // guestButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(258, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 14);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Логин";
+            this.guestButton.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.guestButton.Location = new System.Drawing.Point(713, 339);
+            this.guestButton.Name = "guestButton";
+            this.guestButton.Size = new System.Drawing.Size(75, 23);
+            this.guestButton.TabIndex = 5;
+            this.guestButton.Text = "Гость";
+            this.guestButton.UseVisualStyleBackColor = false;
+            this.guestButton.Click += new System.EventHandler(this.guestButton_Click);
             // 
-            // loginTextBox
+            // loginButton
             // 
-            this.loginTextBox.Location = new System.Drawing.Point(312, 68);
-            this.loginTextBox.Name = "loginTextBox";
-            this.loginTextBox.Size = new System.Drawing.Size(100, 20);
-            this.loginTextBox.TabIndex = 1;
+            this.loginButton.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.loginButton.Location = new System.Drawing.Point(261, 150);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(75, 23);
+            this.loginButton.TabIndex = 4;
+            this.loginButton.Text = "Вход";
+            this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // passwordTextBox
             // 
@@ -84,26 +90,21 @@
             this.label.TabIndex = 2;
             this.label.Text = "Логин";
             // 
-            // loginButton
+            // loginTextBox
             // 
-            this.loginButton.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.loginButton.Location = new System.Drawing.Point(261, 150);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(75, 23);
-            this.loginButton.TabIndex = 4;
-            this.loginButton.Text = "Вход";
-            this.loginButton.UseVisualStyleBackColor = false;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.loginTextBox.Location = new System.Drawing.Point(312, 68);
+            this.loginTextBox.Name = "loginTextBox";
+            this.loginTextBox.Size = new System.Drawing.Size(100, 20);
+            this.loginTextBox.TabIndex = 1;
             // 
-            // guestButton
+            // label1
             // 
-            this.guestButton.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.guestButton.Location = new System.Drawing.Point(713, 339);
-            this.guestButton.Name = "guestButton";
-            this.guestButton.Size = new System.Drawing.Size(75, 23);
-            this.guestButton.TabIndex = 5;
-            this.guestButton.Text = "Гость";
-            this.guestButton.UseVisualStyleBackColor = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(258, 75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 14);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Логин";
             // 
             // LoginForm
             // 

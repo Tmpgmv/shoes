@@ -18,12 +18,35 @@ namespace Shoes
         
         public ParentForm()
         {   
-            InitializeComponent();
-            ContextManager.parentForm = this;            
+            InitializeComponent();            
+            ContextManager.parentForm = this;
+            hideLogoutButton();
         }
 
-        public void setFullName(string fullName) {
-            this.fullName.Text = fullName;
+        public void setFullName() {
+            this.fullNameLabel.Text = ContextManager.user.FullName;
+            this.roleLabel.Text = ContextManager.user.Role.RoleName;
+        }
+
+        public void setTitle(string title)
+        {
+            string tmpTitle = "ООО \"Обувь\": " + title;
+            this.Text = tmpTitle;
+            this.titleLabel.Text = title;
+        }
+
+        public void showLogoutButton() {
+            logoutButton.Visible = true;            
+        }
+
+        public void hideLogoutButton()
+        {
+            logoutButton.Visible = false;
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            AuthManager.logout((ParentForm)((Button)sender).Parent.Parent);            
         }
     }
 }

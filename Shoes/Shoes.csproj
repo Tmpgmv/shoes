@@ -61,6 +61,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppConstants\Color.cs" />
+    <Compile Include="AppControls\ProductUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppControls\ProductUserControl.Designer.cs">
+      <DependentUpon>ProductUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppExceptions\UnauthorizedException.cs" />
     <Compile Include="AppForms\LoginForm.cs">
       <SubType>Form</SubType>
@@ -96,8 +103,16 @@
     <Compile Include="AppModels\User.cs" />
     <Compile Include="AppService\AuthManager.cs" />
     <Compile Include="AppService\ContextManager.cs" />
+    <Compile Include="grablevskiy_mv_shoesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>grablevskiy_mv_shoesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AppControls\ProductUserControl.resx">
+      <DependentUpon>ProductUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +132,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="grablevskiy_mv_shoesDataSet.xsc">
+      <DependentUpon>grablevskiy_mv_shoesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="grablevskiy_mv_shoesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>grablevskiy_mv_shoesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="grablevskiy_mv_shoesDataSet.xss">
+      <DependentUpon>grablevskiy_mv_shoesDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
