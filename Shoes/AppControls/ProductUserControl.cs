@@ -10,17 +10,29 @@ using System.Windows.Forms;
 using Shoes.AppModels;
 using Shoes.AppConstants;
 using System.IO;
+using Shoes.AppService;
+using System.Runtime.Remoting.Contexts;
+using System.Data.Entity.Infrastructure;
 
 namespace Shoes.AppControls
 {
     public partial class ProductUserControl : UserControl
     {
+        Product product;
+
         public ProductUserControl(Product product)
         {
             InitializeComponent();
             showData(product);
             highlightGreatDiscount(product);
             highlightAbsent(product);
+            this.product = product;
+            hideDeleteButton();
+        }
+
+        private void hideDeleteButton()
+        {
+            deleteProductButton.Visible = ContextManager.user.isAdmin();
         }
 
         private void showData(Product product)
@@ -39,15 +51,19 @@ namespace Shoes.AppControls
 
         private Image getImage(Product product)
         {
-            string imagePath = "";
+            
             Image img;
             try
             {
-                imagePath = System.IO.Path.Combine(Application.StartupPath, "img", product.Photo);
-                img = Image.FromFile(imagePath);
-            } catch (FileNotFoundException ex) {
-                imagePath = System.IO.Path.Combine(Application.StartupPath, "img", "picture.png");
-                img = Image.FromFile(imagePath);
+                using (Image tempImg = Image.FromFile(FileManager.getImgPath(product.Photo)))
+                {
+                    // PKGH Создать копию, чтобы не блокировать файл.
+                    // Иначе его невозможно удалить программно.
+                    img = new Bitmap(tempImg); 
+                }
+                
+            } catch (FileNotFoundException ex) {                
+                img = Image.FromFile(FileManager.getImgPath(FilePath.defaultPicture));
             }
             
             return img;
@@ -84,6 +100,26 @@ namespace Shoes.AppControls
             if (product.Amount <= 0) { 
                 this.BackColor = ColorTranslator.FromHtml(AppConstants.Color.attention);
             }
+        }
+
+        private void deleteProductButton_Click(object sender, EventArgs e)
+        {
+            DialogResult toBeDeleted = MessageBox.Show("Удалить?", "Удалить?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if (toBeDeleted == DialogResult.OK) {
+                
+                Product product = Program.context.Product.Where(p => p.IdProduct == this.product.IdProduct).FirstOrDefault();
+                try {
+                    Program.context.Product.Remove(product);
+                    Program.context.SaveChanges();
+                    FileManager.deleteFile(product.Photo);
+                } catch (DbUpdateException ex) {
+                    MessageBox.Show("Товар заказан. Его нельзя удалить.", 
+                        "Товар заказан. Его нельзя удалить.", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }                
+            }
+            
         }
     }
 }

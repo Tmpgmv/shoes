@@ -36,5 +36,16 @@ namespace Shoes.AppModels
         public virtual ICollection<Order> Order { get; set; }
 
         public virtual Role Role { get; set; }
+
+        public bool isGuest() {
+            bool result = (this.Role.RoleName == "Гость");
+            return result;
+        }
+
+        public bool isAdmin()
+        {
+            bool result = (this.Role.RoleName == "Администратор");
+            return result;
+        }
     }
 }

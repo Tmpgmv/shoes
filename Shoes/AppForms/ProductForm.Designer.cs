@@ -43,7 +43,7 @@
             this.manufacturerTableAdapter = new Shoes.grablevskiy_mv_shoesDataSetTableAdapters.ManufacturerTableAdapter();
             this.supplierTableAdapter = new Shoes.grablevskiy_mv_shoesDataSetTableAdapters.SupplierTableAdapter();
             this.unitOfMeasurementTableAdapter = new Shoes.grablevskiy_mv_shoesDataSetTableAdapters.UnitOfMeasurementTableAdapter();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.sort = new System.Windows.Forms.GroupBox();
@@ -60,10 +60,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfMeasurementBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
+            this.splitContainer.Panel1.SuspendLayout();
+            this.splitContainer.Panel2.SuspendLayout();
+            this.splitContainer.SuspendLayout();
             this.panel2.SuspendLayout();
             this.sort.SuspendLayout();
             this.SuspendLayout();
@@ -144,29 +144,29 @@
             // 
             this.unitOfMeasurementTableAdapter.ClearBeforeFill = true;
             // 
-            // splitContainer1
+            // splitContainer
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer.Name = "splitContainer";
+            this.splitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // splitContainer1.Panel1
+            // splitContainer.Panel1
             // 
-            this.splitContainer1.Panel1.AutoScroll = true;
-            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.Chartreuse;
-            this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.search);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.filterByManufacturer);
-            this.splitContainer1.Panel1.Controls.Add(this.sort);
+            this.splitContainer.Panel1.AutoScroll = true;
+            this.splitContainer.Panel1.BackColor = System.Drawing.Color.Chartreuse;
+            this.splitContainer.Panel1.Controls.Add(this.label2);
+            this.splitContainer.Panel1.Controls.Add(this.search);
+            this.splitContainer.Panel1.Controls.Add(this.label1);
+            this.splitContainer.Panel1.Controls.Add(this.filterByManufacturer);
+            this.splitContainer.Panel1.Controls.Add(this.sort);
             // 
-            // splitContainer1.Panel2
+            // splitContainer.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel);
-            this.splitContainer1.Size = new System.Drawing.Size(834, 673);
-            this.splitContainer1.SplitterDistance = 38;
-            this.splitContainer1.TabIndex = 0;
+            this.splitContainer.Panel2.Controls.Add(this.flowLayoutPanel);
+            this.splitContainer.Size = new System.Drawing.Size(834, 673);
+            this.splitContainer.SplitterDistance = 38;
+            this.splitContainer.TabIndex = 0;
             // 
             // flowLayoutPanel
             // 
@@ -179,7 +179,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.splitContainer1);
+            this.panel2.Controls.Add(this.splitContainer);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 76);
             this.panel2.Name = "panel2";
@@ -279,11 +279,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfMeasurementBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.splitContainer.Panel1.ResumeLayout(false);
+            this.splitContainer.Panel1.PerformLayout();
+            this.splitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
+            this.splitContainer.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.sort.ResumeLayout(false);
             this.sort.PerformLayout();
@@ -306,7 +306,7 @@
         private grablevskiy_mv_shoesDataSetTableAdapters.SupplierTableAdapter supplierTableAdapter;
         private System.Windows.Forms.BindingSource unitOfMeasurementBindingSource;
         private grablevskiy_mv_shoesDataSetTableAdapters.UnitOfMeasurementTableAdapter unitOfMeasurementTableAdapter;
-        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer splitContainer;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox sort;

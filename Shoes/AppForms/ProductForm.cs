@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Shoes.AppControls;
 using Shoes.AppModels;
+using Shoes.AppService;
 
 namespace Shoes.AppForms
 {
@@ -103,19 +104,7 @@ namespace Shoes.AppForms
 
         private void clearProducts() {
             flowLayoutPanel.Controls.Clear();
-        }
-
-        //private void showCheapFirst()
-        //{
-        //    clearProducts();            
-        //    showProducts();
-        //}
-
-        //private void showExpensiveFirst()
-        //{
-        //    clearProducts();            
-        //    showProducts();
-        //}
+        }        
 
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
@@ -126,19 +115,7 @@ namespace Shoes.AppForms
         private void filterByManufacturer_SelectedValueChanged(object sender, EventArgs e)
         {
             clearProducts();
-            showProducts();
-
-            //string selectedValue = ((ListControl)sender).SelectedValue.ToString();
-
-            //int manufacturerId = -1;            
-
-            //if (selectedValue != "" && manufacturerId != -1) {
-            //    products = products.Where(p => p.ManufacturerId == manufacturerId);
-            //    clearProducts();
-            //    showProducts();
-            //} else { 
-
-            //}           
+            showProducts();                   
         }
 
         private void search_TextChanged(object sender, EventArgs e)
@@ -151,6 +128,15 @@ namespace Shoes.AppForms
         {
             clearProducts();
             showProducts();
+            if (ContextManager.user.isGuest()) {
+                splitContainer.Panel1.Hide();
+            }
+            
+        }
+
+        private void deleteProductButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

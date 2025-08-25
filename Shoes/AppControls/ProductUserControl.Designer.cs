@@ -41,6 +41,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.discount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.deleteProductButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).BeginInit();
             this.mainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,6 +59,7 @@
             // mainPanel
             // 
             this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mainPanel.Controls.Add(this.deleteProductButton);
             this.mainPanel.Controls.Add(this.oldPrice);
             this.mainPanel.Controls.Add(this.amount);
             this.mainPanel.Controls.Add(this.unitOfMeasurement);
@@ -173,6 +175,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Скидка";
             // 
+            // deleteProductButton
+            // 
+            this.deleteProductButton.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.deleteProductButton.Location = new System.Drawing.Point(410, 86);
+            this.deleteProductButton.Name = "deleteProductButton";
+            this.deleteProductButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteProductButton.TabIndex = 8;
+            this.deleteProductButton.Text = "Удалить";
+            this.deleteProductButton.UseVisualStyleBackColor = false;
+            this.deleteProductButton.Click += new System.EventHandler(this.deleteProductButton_Click);
+            // 
             // ProductUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,6 +194,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.photo);
+            this.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.Name = "ProductUserControl";
             this.Size = new System.Drawing.Size(793, 148);
             ((System.ComponentModel.ISupportInitialize)(this.photo)).EndInit();
@@ -207,5 +221,6 @@
         private System.Windows.Forms.Label amount;
         private System.Windows.Forms.Label unitOfMeasurement;
         private System.Windows.Forms.Label oldPrice;
+        private System.Windows.Forms.Button deleteProductButton;
     }
 }

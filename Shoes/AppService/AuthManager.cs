@@ -23,7 +23,7 @@ namespace Shoes.AppService
             {
                 ContextManager.user = tmpUser;
 
-                ProductForm productForm = new ProductForm();
+                ProductForm productForm = new ProductForm();                
                 productForm.Show();
 
                 ContextManager.parentForm.setFullName();
