@@ -71,6 +71,12 @@
       <DependentUpon>ProductUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="AppExceptions\UnauthorizedException.cs" />
+    <Compile Include="AppForms\CreateUpdateProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\CreateUpdateProduct.Designer.cs">
+      <DependentUpon>CreateUpdateProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,7 @@
     <Compile Include="AppService\AuthManager.cs" />
     <Compile Include="AppService\ContextManager.cs" />
     <Compile Include="AppService\FileManager.cs" />
+    <Compile Include="AppService\FormManager.cs" />
     <Compile Include="grablevskiy_mv_shoesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,6 +122,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AppControls\ProductUserControl.resx">
       <DependentUpon>ProductUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\CreateUpdateProduct.resx">
+      <DependentUpon>CreateUpdateProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

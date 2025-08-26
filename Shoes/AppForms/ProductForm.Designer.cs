@@ -44,15 +44,16 @@
             this.supplierTableAdapter = new Shoes.grablevskiy_mv_shoesDataSetTableAdapters.SupplierTableAdapter();
             this.unitOfMeasurementTableAdapter = new Shoes.grablevskiy_mv_shoesDataSetTableAdapters.UnitOfMeasurementTableAdapter();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.addProductButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.search = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.filterByManufacturer = new System.Windows.Forms.ComboBox();
+            this.sort = new System.Windows.Forms.GroupBox();
+            this.moreFirst = new System.Windows.Forms.RadioButton();
+            this.fewerFirst = new System.Windows.Forms.RadioButton();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.sort = new System.Windows.Forms.GroupBox();
-            this.cheapFirst = new System.Windows.Forms.RadioButton();
-            this.expensiveFirst = new System.Windows.Forms.RadioButton();
-            this.filterByManufacturer = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.search = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grablevskiy_mv_shoesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productNameBindingSource)).BeginInit();
@@ -64,8 +65,8 @@
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.sort.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // categoryBindingSource
@@ -155,6 +156,7 @@
             // 
             this.splitContainer.Panel1.AutoScroll = true;
             this.splitContainer.Panel1.BackColor = System.Drawing.Color.Chartreuse;
+            this.splitContainer.Panel1.Controls.Add(this.addProductButton);
             this.splitContainer.Panel1.Controls.Add(this.label2);
             this.splitContainer.Panel1.Controls.Add(this.search);
             this.splitContainer.Panel1.Controls.Add(this.label1);
@@ -167,6 +169,89 @@
             this.splitContainer.Size = new System.Drawing.Size(834, 673);
             this.splitContainer.SplitterDistance = 38;
             this.splitContainer.TabIndex = 0;
+            // 
+            // addProductButton
+            // 
+            this.addProductButton.Location = new System.Drawing.Point(704, 8);
+            this.addProductButton.Name = "addProductButton";
+            this.addProductButton.Size = new System.Drawing.Size(92, 23);
+            this.addProductButton.TabIndex = 5;
+            this.addProductButton.Text = "Добавить товар";
+            this.addProductButton.UseVisualStyleBackColor = true;
+            this.addProductButton.Click += new System.EventHandler(this.addProductButton_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(436, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 14);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Поиск";
+            // 
+            // search
+            // 
+            this.search.Location = new System.Drawing.Point(476, 11);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(100, 20);
+            this.search.TabIndex = 3;
+            this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(206, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 14);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Поставщик";
+            // 
+            // filterByManufacturer
+            // 
+            this.filterByManufacturer.DataSource = this.supplierBindingSource;
+            this.filterByManufacturer.DisplayMember = "SupplierName";
+            this.filterByManufacturer.FormattingEnabled = true;
+            this.filterByManufacturer.Location = new System.Drawing.Point(292, 9);
+            this.filterByManufacturer.Name = "filterByManufacturer";
+            this.filterByManufacturer.Size = new System.Drawing.Size(121, 22);
+            this.filterByManufacturer.TabIndex = 1;
+            this.filterByManufacturer.ValueMember = "IdSupplier";
+            this.filterByManufacturer.SelectedValueChanged += new System.EventHandler(this.filterByManufacturer_SelectedValueChanged);
+            // 
+            // sort
+            // 
+            this.sort.Controls.Add(this.moreFirst);
+            this.sort.Controls.Add(this.fewerFirst);
+            this.sort.Location = new System.Drawing.Point(13, 0);
+            this.sort.Name = "sort";
+            this.sort.Size = new System.Drawing.Size(171, 36);
+            this.sort.TabIndex = 0;
+            this.sort.TabStop = false;
+            this.sort.Text = "Количество на складе";
+            // 
+            // moreFirst
+            // 
+            this.moreFirst.AutoSize = true;
+            this.moreFirst.Location = new System.Drawing.Point(91, 13);
+            this.moreFirst.Name = "moreFirst";
+            this.moreFirst.Size = new System.Drawing.Size(61, 18);
+            this.moreFirst.TabIndex = 1;
+            this.moreFirst.TabStop = true;
+            this.moreFirst.Text = "Больше";
+            this.moreFirst.UseVisualStyleBackColor = true;
+            this.moreFirst.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
+            // 
+            // fewerFirst
+            // 
+            this.fewerFirst.AutoSize = true;
+            this.fewerFirst.Location = new System.Drawing.Point(7, 13);
+            this.fewerFirst.Name = "fewerFirst";
+            this.fewerFirst.Size = new System.Drawing.Size(64, 18);
+            this.fewerFirst.TabIndex = 0;
+            this.fewerFirst.TabStop = true;
+            this.fewerFirst.Text = "Меньше";
+            this.fewerFirst.UseVisualStyleBackColor = true;
+            this.fewerFirst.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // flowLayoutPanel
             // 
@@ -185,79 +270,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(834, 673);
             this.panel2.TabIndex = 2;
-            // 
-            // sort
-            // 
-            this.sort.Controls.Add(this.expensiveFirst);
-            this.sort.Controls.Add(this.cheapFirst);
-            this.sort.Location = new System.Drawing.Point(13, 0);
-            this.sort.Name = "sort";
-            this.sort.Size = new System.Drawing.Size(171, 36);
-            this.sort.TabIndex = 0;
-            this.sort.TabStop = false;
-            this.sort.Text = "Сначала";
-            // 
-            // cheapFirst
-            // 
-            this.cheapFirst.AutoSize = true;
-            this.cheapFirst.Location = new System.Drawing.Point(7, 13);
-            this.cheapFirst.Name = "cheapFirst";
-            this.cheapFirst.Size = new System.Drawing.Size(68, 18);
-            this.cheapFirst.TabIndex = 0;
-            this.cheapFirst.TabStop = true;
-            this.cheapFirst.Text = "Дешевые";
-            this.cheapFirst.UseVisualStyleBackColor = true;
-            this.cheapFirst.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
-            // 
-            // expensiveFirst
-            // 
-            this.expensiveFirst.AutoSize = true;
-            this.expensiveFirst.Location = new System.Drawing.Point(91, 13);
-            this.expensiveFirst.Name = "expensiveFirst";
-            this.expensiveFirst.Size = new System.Drawing.Size(67, 18);
-            this.expensiveFirst.TabIndex = 1;
-            this.expensiveFirst.TabStop = true;
-            this.expensiveFirst.Text = "Дорогие";
-            this.expensiveFirst.UseVisualStyleBackColor = true;
-            this.expensiveFirst.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
-            // 
-            // filterByManufacturer
-            // 
-            this.filterByManufacturer.DataSource = this.manufacturerBindingSource;
-            this.filterByManufacturer.DisplayMember = "ManufacturerName";
-            this.filterByManufacturer.FormattingEnabled = true;
-            this.filterByManufacturer.Location = new System.Drawing.Point(292, 9);
-            this.filterByManufacturer.Name = "filterByManufacturer";
-            this.filterByManufacturer.Size = new System.Drawing.Size(121, 22);
-            this.filterByManufacturer.TabIndex = 1;
-            this.filterByManufacturer.ValueMember = "IdManufacturer";
-            this.filterByManufacturer.SelectedValueChanged += new System.EventHandler(this.filterByManufacturer_SelectedValueChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(206, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 14);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Производитель";
-            // 
-            // search
-            // 
-            this.search.Location = new System.Drawing.Point(476, 11);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(100, 20);
-            this.search.TabIndex = 3;
-            this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(436, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 14);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Поиск";
             // 
             // ProductForm
             // 
@@ -284,9 +296,9 @@
             this.splitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.sort.ResumeLayout(false);
             this.sort.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -310,11 +322,12 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox sort;
-        private System.Windows.Forms.RadioButton cheapFirst;
-        private System.Windows.Forms.RadioButton expensiveFirst;
+        private System.Windows.Forms.RadioButton fewerFirst;
+        private System.Windows.Forms.RadioButton moreFirst;
         private System.Windows.Forms.ComboBox filterByManufacturer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox search;
+        private System.Windows.Forms.Button addProductButton;
     }
 }

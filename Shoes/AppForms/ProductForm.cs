@@ -1,17 +1,13 @@
-﻿using System;
+﻿using Shoes.AppControls;
+using Shoes.AppModels;
+using Shoes.AppService;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Shoes.AppControls;
-using Shoes.AppModels;
-using Shoes.AppService;
 
 namespace Shoes.AppForms
 {
@@ -20,30 +16,23 @@ namespace Shoes.AppForms
         private IQueryable<Product> products;
         public ProductForm()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
-
-        private void productBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.productBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.grablevskiy_mv_shoesDataSet);
-
-        }
-
 
 
         private void ProductForm_Load(object sender, EventArgs e)
         {
-            fillManufacturer();
+            fillSupplier();
         }
 
-        private void fillManufacturer()
+        private void fillSupplier()
         {
-            List<Manufacturer> manufacturers = Program.context.Manufacturer.OrderBy(m => m.ManufacturerName).ToList();
-            manufacturers.Insert(0, new Manufacturer());
+            List<Supplier> suppliers = Program.context.Supplier.OrderBy(s => s.SupplierName).ToList();
+            Supplier supplier = new Supplier();
+            supplier.SupplierName = "Все поставщики";
+            suppliers.Insert(0, supplier);
 
-            manufacturerBindingSource.DataSource = manufacturers;
+            supplierBindingSource.DataSource = suppliers;
         }
 
         private void showProducts()
@@ -59,41 +48,45 @@ namespace Shoes.AppForms
         {
             string searchInput = search.Text;
 
-            bool cheapFirstInput = cheapFirst.Checked;
+            bool fewerFirstInput = fewerFirst.Checked;
 
-            int manufacturerId = getManufacturerId();
+            int supplierId = getSupplierId();
 
             IQueryable<Product> tmpProducts = Program.context.Product;
 
-            if (search.Text.Trim() != "") {
+            if (search.Text.Trim() != "")
+            {
                 tmpProducts = tmpProducts.Where(obj => DbFunctions.Like(obj.Sku, "%" + searchInput + "%")
                 || DbFunctions.Like(obj.Description, "%" + searchInput + "%"));
             }
 
-            if (cheapFirstInput)
+            if (fewerFirstInput)
             {
-                tmpProducts = tmpProducts.OrderBy(p => p.Price);
+                tmpProducts = tmpProducts.OrderBy(p => p.Amount);
             }
-            else {
-                tmpProducts = tmpProducts.OrderByDescending(p => p.Price);
+            else
+            {
+                tmpProducts = tmpProducts.OrderByDescending(p => p.Amount);
             }
 
-            if (manufacturerId > 0) {
-                tmpProducts = tmpProducts.Where(p => p.ManufacturerId == manufacturerId);
+            if (supplierId > 0)
+            {
+                tmpProducts = tmpProducts.Where(p => p.SupplierId == supplierId);
             }
 
             return tmpProducts;
         }
 
-        private int getManufacturerId()
+        private int getSupplierId()
         {
             int id = 0;
             var selected = filterByManufacturer.SelectedItem;
-            
-            if (selected != null) {
-                id = ((Shoes.AppModels.Manufacturer)selected).IdManufacturer;
+
+            if (selected != null)
+            {
+                id = ((Shoes.AppModels.Supplier)selected).IdSupplier;
             }
-            
+
             return id;
         }
 
@@ -102,40 +95,62 @@ namespace Shoes.AppForms
             Application.Exit();
         }
 
-        private void clearProducts() {
+        private void clearProducts()
+        {
             flowLayoutPanel.Controls.Clear();
-        }        
+        }
 
-        private void RadioButton_CheckedChanged(object sender, EventArgs e)
+        public void refreshProductList()
         {
             clearProducts();
             showProducts();
+        }
+
+        private void RadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            refreshProductList();
         }
 
         private void filterByManufacturer_SelectedValueChanged(object sender, EventArgs e)
         {
-            clearProducts();
-            showProducts();                   
+            refreshProductList();
         }
 
         private void search_TextChanged(object sender, EventArgs e)
         {
-            clearProducts();
-            showProducts();
+            refreshProductList();
         }
 
         private void ProductForm_Shown(object sender, EventArgs e)
         {
-            clearProducts();
-            showProducts();
-            if (ContextManager.user.isGuest()) {
+            hideAddProductButton();
+            refreshProductList();
+            if (ContextManager.user.isGuest())
+            {
                 splitContainer.Panel1.Hide();
             }
-            
+
+            FormManager.prepareForm("Товары");
         }
 
-        private void deleteProductButton_Click(object sender, EventArgs e)
+
+        private void hideAddProductButton()
         {
+            addProductButton.Visible = ContextManager.user.isAdmin();
+        }
+
+
+
+
+        private void addProductButton_Click(object sender, EventArgs e)
+        {
+            CreateUpdateProduct createUpdateProduct = new CreateUpdateProduct();
+            DialogResult productSaved = createUpdateProduct.ShowDialog();
+
+            if (productSaved == DialogResult.OK)
+            {
+                refreshProductList();
+            }
 
         }
     }

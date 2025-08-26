@@ -26,12 +26,7 @@ namespace Shoes.AppService
                 ProductForm productForm = new ProductForm();                
                 productForm.Show();
 
-                ContextManager.parentForm.setFullName();
-                ContextManager.parentForm.setTitle("Товары");
-
-                ContextManager.loginForm = loginForm;
-
-                ContextManager.parentForm.showLogoutButton();
+                ContextManager.loginForm = loginForm;                
 
                 loginForm.Hide();
             }
