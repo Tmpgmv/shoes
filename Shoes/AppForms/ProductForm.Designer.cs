@@ -44,6 +44,7 @@
             this.supplierTableAdapter = new Shoes.grablevskiy_mv_shoesDataSetTableAdapters.SupplierTableAdapter();
             this.unitOfMeasurementTableAdapter = new Shoes.grablevskiy_mv_shoesDataSetTableAdapters.UnitOfMeasurementTableAdapter();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.ordersButton = new System.Windows.Forms.Button();
             this.addProductButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.search = new System.Windows.Forms.TextBox();
@@ -156,6 +157,7 @@
             // 
             this.splitContainer.Panel1.AutoScroll = true;
             this.splitContainer.Panel1.BackColor = System.Drawing.Color.Chartreuse;
+            this.splitContainer.Panel1.Controls.Add(this.ordersButton);
             this.splitContainer.Panel1.Controls.Add(this.addProductButton);
             this.splitContainer.Panel1.Controls.Add(this.label2);
             this.splitContainer.Panel1.Controls.Add(this.search);
@@ -170,9 +172,19 @@
             this.splitContainer.SplitterDistance = 38;
             this.splitContainer.TabIndex = 0;
             // 
+            // ordersButton
+            // 
+            this.ordersButton.Location = new System.Drawing.Point(731, 8);
+            this.ordersButton.Name = "ordersButton";
+            this.ordersButton.Size = new System.Drawing.Size(92, 23);
+            this.ordersButton.TabIndex = 6;
+            this.ordersButton.Text = "Заказы";
+            this.ordersButton.UseVisualStyleBackColor = true;
+            this.ordersButton.Click += new System.EventHandler(this.ordersButton_Click);
+            // 
             // addProductButton
             // 
-            this.addProductButton.Location = new System.Drawing.Point(704, 8);
+            this.addProductButton.Location = new System.Drawing.Point(619, 9);
             this.addProductButton.Name = "addProductButton";
             this.addProductButton.Size = new System.Drawing.Size(92, 23);
             this.addProductButton.TabIndex = 5;
@@ -329,5 +341,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox search;
         private System.Windows.Forms.Button addProductButton;
+        private System.Windows.Forms.Button ordersButton;
     }
 }

@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParentForm));
             this.header = new System.Windows.Forms.Panel();
+            this.logoutButton = new System.Windows.Forms.Button();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.roleLabel = new System.Windows.Forms.Label();
             this.fullNameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.roleLabel = new System.Windows.Forms.Label();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.logoutButton = new System.Windows.Forms.Button();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,13 +53,40 @@
             this.header.Size = new System.Drawing.Size(800, 70);
             this.header.TabIndex = 0;
             // 
+            // logoutButton
+            // 
+            this.logoutButton.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.logoutButton.Location = new System.Drawing.Point(749, 6);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(46, 23);
+            this.logoutButton.TabIndex = 4;
+            this.logoutButton.Text = "Выход";
+            this.logoutButton.UseVisualStyleBackColor = false;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.titleLabel.Location = new System.Drawing.Point(66, 10);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(258, 22);
+            this.titleLabel.TabIndex = 3;
+            this.titleLabel.Text = "Заголовок";
+            // 
+            // roleLabel
+            // 
+            this.roleLabel.Location = new System.Drawing.Point(618, 10);
+            this.roleLabel.Name = "roleLabel";
+            this.roleLabel.Size = new System.Drawing.Size(125, 22);
+            this.roleLabel.TabIndex = 2;
+            this.roleLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // fullNameLabel
             // 
             this.fullNameLabel.Location = new System.Drawing.Point(330, 10);
             this.fullNameLabel.Name = "fullNameLabel";
             this.fullNameLabel.Size = new System.Drawing.Size(282, 22);
             this.fullNameLabel.TabIndex = 1;
-            this.fullNameLabel.Text = "_";
             this.fullNameLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // pictureBox1
@@ -71,35 +98,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // roleLabel
-            // 
-            this.roleLabel.Location = new System.Drawing.Point(618, 10);
-            this.roleLabel.Name = "roleLabel";
-            this.roleLabel.Size = new System.Drawing.Size(125, 22);
-            this.roleLabel.TabIndex = 2;
-            this.roleLabel.Text = "_";
-            this.roleLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // titleLabel
-            // 
-            this.titleLabel.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.titleLabel.Location = new System.Drawing.Point(66, 10);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(258, 22);
-            this.titleLabel.TabIndex = 3;
-            this.titleLabel.Text = "Заголовок";
-            // 
-            // logoutButton
-            // 
-            this.logoutButton.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.logoutButton.Location = new System.Drawing.Point(749, 6);
-            this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(46, 23);
-            this.logoutButton.TabIndex = 4;
-            this.logoutButton.Text = "Выход";
-            this.logoutButton.UseVisualStyleBackColor = false;
-            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // ParentForm
             // 

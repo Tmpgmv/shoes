@@ -47,5 +47,11 @@ namespace Shoes.AppModels
             bool result = (this.Role.RoleName == "Администратор");
             return result;
         }
+
+        public bool isManager()
+        {
+            bool result = (this.Role.RoleName == "Менеджер");
+            return result;
+        }
     }
 }

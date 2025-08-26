@@ -13,8 +13,7 @@ namespace Shoes.AppService
     {
         public static User user; 
         public static ParentForm parentForm;
+        public static ProductForm productForm;
         public static LoginForm loginForm;
-    }
-
-    
+    }    
 }

@@ -124,6 +124,7 @@ namespace Shoes.AppForms
         private void ProductForm_Shown(object sender, EventArgs e)
         {
             hideAddProductButton();
+            hideOrdersButton();
             refreshProductList();
             if (ContextManager.user.isGuest())
             {
@@ -133,6 +134,10 @@ namespace Shoes.AppForms
             FormManager.prepareForm("Товары");
         }
 
+        private void hideOrdersButton()
+        {
+            ordersButton.Visible = ContextManager.user.isAdmin() || ContextManager.user.isManager();
+        }
 
         private void hideAddProductButton()
         {
@@ -152,6 +157,14 @@ namespace Shoes.AppForms
                 refreshProductList();
             }
 
+        }
+
+        private void ordersButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            OrderForm orderForm = new OrderForm();
+            orderForm.Show();
         }
     }
 }

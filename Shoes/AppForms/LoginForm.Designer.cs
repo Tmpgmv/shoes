@@ -65,7 +65,7 @@
             // loginButton
             // 
             this.loginButton.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.loginButton.Location = new System.Drawing.Point(261, 150);
+            this.loginButton.Location = new System.Drawing.Point(341, 191);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(75, 23);
             this.loginButton.TabIndex = 4;
@@ -75,7 +75,7 @@
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(312, 108);
+            this.passwordTextBox.Location = new System.Drawing.Point(392, 149);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
@@ -84,7 +84,7 @@
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(258, 115);
+            this.label.Location = new System.Drawing.Point(338, 156);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(37, 14);
             this.label.TabIndex = 2;
@@ -92,7 +92,7 @@
             // 
             // loginTextBox
             // 
-            this.loginTextBox.Location = new System.Drawing.Point(312, 68);
+            this.loginTextBox.Location = new System.Drawing.Point(392, 109);
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(100, 20);
             this.loginTextBox.TabIndex = 1;
@@ -100,7 +100,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(258, 75);
+            this.label1.Location = new System.Drawing.Point(338, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 14);
             this.label1.TabIndex = 0;
