@@ -13,7 +13,7 @@ namespace Shoes.AppForms
 {
     public partial class ProductForm : ParentForm
     {
-        private IQueryable<Product> products;
+        private IQueryable<Product> _products;
         public ProductForm()
         {
             InitializeComponent();
@@ -36,9 +36,8 @@ namespace Shoes.AppForms
         }
 
         private void showProducts()
-        {
-            products = getProducts();
-            foreach (Product p in products.ToList())
+        {            
+            foreach (Product p in _products.ToList())
             {
                 flowLayoutPanel.Controls.Add(new ProductUserControl(p));
             }
@@ -103,6 +102,7 @@ namespace Shoes.AppForms
         public void refreshProductList()
         {
             clearProducts();
+            _products = getProducts();
             showProducts();
         }
 
@@ -122,7 +122,7 @@ namespace Shoes.AppForms
         }
 
         private void ProductForm_Shown(object sender, EventArgs e)
-        {
+        {            
             hideAddProductButton();
             hideOrdersButton();
             refreshProductList();

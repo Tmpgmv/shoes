@@ -114,7 +114,7 @@ namespace Shoes.AppControls
                     Program.context.Product.Remove(product);
                     Program.context.SaveChanges();
                     FileManager.deleteFile(product.Photo);
-                    ((ProductForm)this.Parent.Parent.Parent.Parent.Parent).refreshProductList();
+                    ((ProductForm)this.Parent.Parent.Parent.Parent).refreshProductList();
                 } catch (DbUpdateException ex) {
                     MessageBox.Show("Товар заказан. Его нельзя удалить.", 
                         "Товар заказан. Его нельзя удалить.", 

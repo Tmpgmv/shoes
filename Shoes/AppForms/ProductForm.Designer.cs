@@ -54,7 +54,6 @@
             this.moreFirst = new System.Windows.Forms.RadioButton();
             this.fewerFirst = new System.Windows.Forms.RadioButton();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grablevskiy_mv_shoesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productNameBindingSource)).BeginInit();
@@ -67,7 +66,6 @@
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
             this.sort.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // categoryBindingSource
@@ -150,7 +148,7 @@
             // 
             this.splitContainer.BackColor = System.Drawing.Color.Transparent;
             this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer.Location = new System.Drawing.Point(0, 70);
             this.splitContainer.Name = "splitContainer";
             this.splitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -169,9 +167,9 @@
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.Controls.Add(this.flowLayoutPanel);
-            this.splitContainer.Size = new System.Drawing.Size(834, 673);
+            this.splitContainer.Size = new System.Drawing.Size(834, 679);
             this.splitContainer.SplitterDistance = 38;
-            this.splitContainer.TabIndex = 0;
+            this.splitContainer.TabIndex = 1;
             // 
             // ordersButton
             // 
@@ -272,17 +270,8 @@
             this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(834, 631);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(834, 637);
             this.flowLayoutPanel.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.splitContainer);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 76);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 673);
-            this.panel2.TabIndex = 2;
             // 
             // ProductForm
             // 
@@ -290,13 +279,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(834, 749);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.splitContainer);
             this.Name = "ProductForm";
             this.Text = "ProductForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProductForm_FormClosed);
             this.Load += new System.EventHandler(this.ProductForm_Load);
             this.Shown += new System.EventHandler(this.ProductForm_Shown);
-            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.splitContainer, 0);
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grablevskiy_mv_shoesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productNameBindingSource)).EndInit();
@@ -311,7 +300,6 @@
             this.splitContainer.ResumeLayout(false);
             this.sort.ResumeLayout(false);
             this.sort.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -332,16 +320,15 @@
         private System.Windows.Forms.BindingSource unitOfMeasurementBindingSource;
         private grablevskiy_mv_shoesDataSetTableAdapters.UnitOfMeasurementTableAdapter unitOfMeasurementTableAdapter;
         private System.Windows.Forms.SplitContainer splitContainer;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.GroupBox sort;
-        private System.Windows.Forms.RadioButton fewerFirst;
-        private System.Windows.Forms.RadioButton moreFirst;
-        private System.Windows.Forms.ComboBox filterByManufacturer;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button ordersButton;
+        private System.Windows.Forms.Button addProductButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox search;
-        private System.Windows.Forms.Button addProductButton;
-        private System.Windows.Forms.Button ordersButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox filterByManufacturer;
+        private System.Windows.Forms.GroupBox sort;
+        private System.Windows.Forms.RadioButton moreFirst;
+        private System.Windows.Forms.RadioButton fewerFirst;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
     }
 }

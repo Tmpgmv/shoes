@@ -64,6 +64,12 @@
   <ItemGroup>
     <Compile Include="AppConstants\Color.cs" />
     <Compile Include="AppConstants\FilePath.cs" />
+    <Compile Include="AppControls\OrderUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppControls\OrderUserControl.Designer.cs">
+      <DependentUpon>OrderUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppControls\ProductUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AppControls\OrderUserControl.resx">
+      <DependentUpon>OrderUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppControls\ProductUserControl.resx">
       <DependentUpon>ProductUserControl.cs</DependentUpon>
     </EmbeddedResource>
