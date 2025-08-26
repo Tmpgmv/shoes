@@ -163,6 +163,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="doc\diagram %281%29.pdf" />
     <None Include="grablevskiy_mv_shoesDataSet.xsc">
       <DependentUpon>grablevskiy_mv_shoesDataSet.xsd</DependentUpon>
     </None>

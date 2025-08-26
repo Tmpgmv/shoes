@@ -109,11 +109,11 @@ namespace Shoes.AppControls
 
             if (toBeDeleted == DialogResult.OK) {
                 
-                Product product = Program.context.Product.Where(p => p.IdProduct == this._product.IdProduct).FirstOrDefault();
+                //Product product = Program.context.Product.Where(p => p.IdProduct == this._product.IdProduct).FirstOrDefault();
                 try {
-                    Program.context.Product.Remove(product);
+                    Program.context.Product.Remove(_product);
                     Program.context.SaveChanges();
-                    FileManager.deleteFile(product.Photo);
+                    FileManager.deleteFile(_product.Photo);
                     ((ProductForm)this.Parent.Parent.Parent.Parent).refreshProductList();
                 } catch (DbUpdateException ex) {
                     MessageBox.Show("Товар заказан. Его нельзя удалить.", 

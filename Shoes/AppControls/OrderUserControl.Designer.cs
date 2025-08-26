@@ -35,6 +35,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.deliveryDateLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.deleteProductButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,11 +103,23 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Дата доставки";
             // 
+            // deleteProductButton
+            // 
+            this.deleteProductButton.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.deleteProductButton.Location = new System.Drawing.Point(549, 77);
+            this.deleteProductButton.Name = "deleteProductButton";
+            this.deleteProductButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteProductButton.TabIndex = 9;
+            this.deleteProductButton.Text = "Удалить";
+            this.deleteProductButton.UseVisualStyleBackColor = false;
+            this.deleteProductButton.Click += new System.EventHandler(this.deleteProductButton_Click);
+            // 
             // OrderUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.deleteProductButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.orderDateLabel);
             this.Controls.Add(this.officeLabel);
@@ -131,5 +144,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label deliveryDateLabel;
+        private System.Windows.Forms.Button deleteProductButton;
     }
 }

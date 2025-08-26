@@ -1,9 +1,12 @@
 ﻿using Microsoft.Build.Tasks.Deployment.Bootstrapper;
+using Shoes.AppForms;
 using Shoes.AppModels;
+using Shoes.AppService;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Infrastructure;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,6 +22,7 @@ namespace Shoes.AppControls
         {
             InitializeComponent();
             showData(order);
+            _order = order;
         }
 
         private void showData(Order order)
@@ -28,6 +32,28 @@ namespace Shoes.AppControls
             orderDateLabel.Text = "Дата заказа:" + string.Format("{0:dd.MM.yyyy}", order.OrderDate);
             officeLabel.Text = "Адрес пункта выдачи: " + order.Office.Address;
             statusLabel.Text = "Статус заказа: " + order.Status.StatusName;
+        }
+
+        private void deleteProductButton_Click(object sender, EventArgs e)
+        {
+            DialogResult toBeDeleted = MessageBox.Show("Удалить?", "Удалить?", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if (toBeDeleted == DialogResult.OK)
+            {                
+                try
+                {
+                    Program.context.Order.Remove(_order);
+                    Program.context.SaveChanges();                    
+                    ((OrderForm)this.Parent.Parent.Parent.Parent).refreshOrders();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Не удалось удалить заказ.", 
+                        "Не удалось удалить заказ.",
+                        MessageBoxButtons.OK, 
+                        MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

@@ -76,7 +76,7 @@ namespace Shoes.AppForms
                     param
                 ).ToList();
 
-                tmpOrders = tmpOrders.Where(o => ids.Contains(o.IdOrder));
+                tmpOrders = tmpOrders.Where(o => ids.Contains(o.IdOrder));                
             }
 
             if (asc)
@@ -122,7 +122,7 @@ namespace Shoes.AppForms
             flowLayoutPanel.Controls.Clear();
         }
 
-        private void refreshOrders() {
+        public void refreshOrders() {
             clearOrders();            
             _orders = getOrders();
             showOrders();
