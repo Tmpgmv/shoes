@@ -30,6 +30,7 @@
         {
             this.photo = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.deleteProductButton = new System.Windows.Forms.Button();
             this.oldPrice = new System.Windows.Forms.Label();
             this.amount = new System.Windows.Forms.Label();
             this.unitOfMeasurement = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.discount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.deleteProductButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).BeginInit();
             this.mainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -55,6 +55,7 @@
             this.photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.photo.TabIndex = 0;
             this.photo.TabStop = false;
+            this.photo.Click += new System.EventHandler(this.control_Click);
             // 
             // mainPanel
             // 
@@ -72,108 +73,7 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(500, 122);
             this.mainPanel.TabIndex = 1;
-            // 
-            // oldPrice
-            // 
-            this.oldPrice.AutoSize = true;
-            this.oldPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.oldPrice.ForeColor = System.Drawing.Color.Red;
-            this.oldPrice.Location = new System.Drawing.Point(100, 60);
-            this.oldPrice.Name = "oldPrice";
-            this.oldPrice.Size = new System.Drawing.Size(0, 13);
-            this.oldPrice.TabIndex = 7;
-            // 
-            // amount
-            // 
-            this.amount.AutoSize = true;
-            this.amount.Location = new System.Drawing.Point(13, 86);
-            this.amount.Name = "amount";
-            this.amount.Size = new System.Drawing.Size(120, 13);
-            this.amount.TabIndex = 6;
-            this.amount.Text = "Количество на складе";
-            // 
-            // unitOfMeasurement
-            // 
-            this.unitOfMeasurement.AutoSize = true;
-            this.unitOfMeasurement.Location = new System.Drawing.Point(13, 73);
-            this.unitOfMeasurement.Name = "unitOfMeasurement";
-            this.unitOfMeasurement.Size = new System.Drawing.Size(109, 13);
-            this.unitOfMeasurement.TabIndex = 5;
-            this.unitOfMeasurement.Text = "Единица измерения";
-            // 
-            // price
-            // 
-            this.price.AutoSize = true;
-            this.price.Location = new System.Drawing.Point(13, 60);
-            this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(33, 13);
-            this.price.TabIndex = 4;
-            this.price.Text = "Цена";
-            // 
-            // supplier
-            // 
-            this.supplier.AutoSize = true;
-            this.supplier.Location = new System.Drawing.Point(13, 47);
-            this.supplier.Name = "supplier";
-            this.supplier.Size = new System.Drawing.Size(65, 13);
-            this.supplier.TabIndex = 3;
-            this.supplier.Text = "Поставщик";
-            // 
-            // manufacturer
-            // 
-            this.manufacturer.AutoSize = true;
-            this.manufacturer.Location = new System.Drawing.Point(13, 34);
-            this.manufacturer.Name = "manufacturer";
-            this.manufacturer.Size = new System.Drawing.Size(86, 13);
-            this.manufacturer.TabIndex = 2;
-            this.manufacturer.Text = "Производитель";
-            // 
-            // description
-            // 
-            this.description.AutoSize = true;
-            this.description.Location = new System.Drawing.Point(13, 21);
-            this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(95, 13);
-            this.description.TabIndex = 1;
-            this.description.Text = "Описание товара";
-            // 
-            // categoryName
-            // 
-            this.categoryName.AutoSize = true;
-            this.categoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.categoryName.Location = new System.Drawing.Point(13, 4);
-            this.categoryName.Name = "categoryName";
-            this.categoryName.Size = new System.Drawing.Size(157, 13);
-            this.categoryName.TabIndex = 0;
-            this.categoryName.Text = "КатегорияНаименование";
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.discount);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(652, 13);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(129, 122);
-            this.panel1.TabIndex = 2;
-            // 
-            // discount
-            // 
-            this.discount.AutoSize = true;
-            this.discount.Location = new System.Drawing.Point(51, 54);
-            this.discount.Name = "discount";
-            this.discount.Size = new System.Drawing.Size(44, 13);
-            this.discount.TabIndex = 1;
-            this.discount.Text = "Скидка";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Скидка";
+            this.mainPanel.Click += new System.EventHandler(this.control_Click);
             // 
             // deleteProductButton
             // 
@@ -186,6 +86,119 @@
             this.deleteProductButton.UseVisualStyleBackColor = false;
             this.deleteProductButton.Click += new System.EventHandler(this.deleteProductButton_Click);
             // 
+            // oldPrice
+            // 
+            this.oldPrice.AutoSize = true;
+            this.oldPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.oldPrice.ForeColor = System.Drawing.Color.Red;
+            this.oldPrice.Location = new System.Drawing.Point(100, 60);
+            this.oldPrice.Name = "oldPrice";
+            this.oldPrice.Size = new System.Drawing.Size(0, 13);
+            this.oldPrice.TabIndex = 7;
+            this.oldPrice.Click += new System.EventHandler(this.control_Click);
+            // 
+            // amount
+            // 
+            this.amount.AutoSize = true;
+            this.amount.Location = new System.Drawing.Point(13, 86);
+            this.amount.Name = "amount";
+            this.amount.Size = new System.Drawing.Size(120, 13);
+            this.amount.TabIndex = 6;
+            this.amount.Text = "Количество на складе";
+            this.amount.Click += new System.EventHandler(this.control_Click);
+            // 
+            // unitOfMeasurement
+            // 
+            this.unitOfMeasurement.AutoSize = true;
+            this.unitOfMeasurement.Location = new System.Drawing.Point(13, 73);
+            this.unitOfMeasurement.Name = "unitOfMeasurement";
+            this.unitOfMeasurement.Size = new System.Drawing.Size(109, 13);
+            this.unitOfMeasurement.TabIndex = 5;
+            this.unitOfMeasurement.Text = "Единица измерения";
+            this.unitOfMeasurement.Click += new System.EventHandler(this.control_Click);
+            // 
+            // price
+            // 
+            this.price.AutoSize = true;
+            this.price.Location = new System.Drawing.Point(13, 60);
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(33, 13);
+            this.price.TabIndex = 4;
+            this.price.Text = "Цена";
+            this.price.Click += new System.EventHandler(this.control_Click);
+            // 
+            // supplier
+            // 
+            this.supplier.AutoSize = true;
+            this.supplier.Location = new System.Drawing.Point(13, 47);
+            this.supplier.Name = "supplier";
+            this.supplier.Size = new System.Drawing.Size(65, 13);
+            this.supplier.TabIndex = 3;
+            this.supplier.Text = "Поставщик";
+            this.supplier.Click += new System.EventHandler(this.control_Click);
+            // 
+            // manufacturer
+            // 
+            this.manufacturer.AutoSize = true;
+            this.manufacturer.Location = new System.Drawing.Point(13, 34);
+            this.manufacturer.Name = "manufacturer";
+            this.manufacturer.Size = new System.Drawing.Size(86, 13);
+            this.manufacturer.TabIndex = 2;
+            this.manufacturer.Text = "Производитель";
+            this.manufacturer.Click += new System.EventHandler(this.control_Click);
+            // 
+            // description
+            // 
+            this.description.AutoSize = true;
+            this.description.Location = new System.Drawing.Point(13, 21);
+            this.description.Name = "description";
+            this.description.Size = new System.Drawing.Size(95, 13);
+            this.description.TabIndex = 1;
+            this.description.Text = "Описание товара";
+            this.description.Click += new System.EventHandler(this.control_Click);
+            // 
+            // categoryName
+            // 
+            this.categoryName.AutoSize = true;
+            this.categoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.categoryName.Location = new System.Drawing.Point(13, 4);
+            this.categoryName.Name = "categoryName";
+            this.categoryName.Size = new System.Drawing.Size(157, 13);
+            this.categoryName.TabIndex = 0;
+            this.categoryName.Text = "КатегорияНаименование";
+            this.categoryName.Click += new System.EventHandler(this.control_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.discount);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(652, 13);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(129, 122);
+            this.panel1.TabIndex = 2;
+            this.panel1.Click += new System.EventHandler(this.control_Click);
+            // 
+            // discount
+            // 
+            this.discount.AutoSize = true;
+            this.discount.Location = new System.Drawing.Point(51, 54);
+            this.discount.Name = "discount";
+            this.discount.Size = new System.Drawing.Size(44, 13);
+            this.discount.TabIndex = 1;
+            this.discount.Text = "Скидка";
+            this.discount.Click += new System.EventHandler(this.control_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(51, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Скидка";
+            this.label1.Click += new System.EventHandler(this.control_Click);
+            // 
             // ProductUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,6 +210,7 @@
             this.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.Name = "ProductUserControl";
             this.Size = new System.Drawing.Size(793, 148);
+            this.Click += new System.EventHandler(this.control_Click);
             ((System.ComponentModel.ISupportInitialize)(this.photo)).EndInit();
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();

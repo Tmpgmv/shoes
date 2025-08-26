@@ -25,6 +25,12 @@ namespace Shoes.AppForms
         }
 
 
+        public CreateUpdateProduct(Shoes.AppModels.Product product)
+        {
+            InitializeComponent();
+            _product = product;            
+        }
+
 
         private void CreateUpdateProduct_Shown(object sender, EventArgs e)
         {
@@ -51,8 +57,13 @@ namespace Shoes.AppForms
             this.unitOfMeasurementTableAdapter.Fill(this.grablevskiy_mv_shoesDataSet.UnitOfMeasurement);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "grablevskiy_mv_shoesDataSet.ProductName". При необходимости она может быть перемещена или удалена.
             this.productNameTableAdapter.Fill(this.grablevskiy_mv_shoesDataSet.ProductName);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "grablevskiy_mv_shoesDataSet.Product". При необходимости она может быть перемещена или удалена.
-            //this.productTableAdapter.Fill(this.grablevskiy_mv_shoesDataSet.Product);
+
+
+            if (!_product.isNew())
+            {
+                productBindingSource.DataSource = _product;
+            }
+
 
         }
 
@@ -80,7 +91,11 @@ namespace Shoes.AppForms
             }
 
             try {
-                string fileName = saveImage();
+
+                string newFileName = saveImage();
+
+                string fileName = newFileName == "" ? _product.Photo : newFileName;
+                
                 FillModelFields(fileName);
 
                 DialogResult toBeSaved = MessageBox.Show("Сохранить?", "Запрос подтверждения", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -125,6 +140,10 @@ namespace Shoes.AppForms
 
         private string saveImage()
         {
+            if (string.IsNullOrEmpty(openFileDialog.FileName)) {
+                return "";
+            }
+
             Image originalImage = Image.FromFile(openFileDialog.FileName);
 
             // Создаем уменьшенное изображение
@@ -192,7 +211,7 @@ namespace Shoes.AppForms
         private bool isPhotoSelected()
         {
             bool result = true;
-            if (string.IsNullOrEmpty(openFileDialog.FileName))
+            if (string.IsNullOrEmpty(photoTextBox.Text))
             {
                 result = false;                 
             }

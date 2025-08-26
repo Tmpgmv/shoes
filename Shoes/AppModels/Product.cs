@@ -57,5 +57,11 @@ namespace Shoes.AppModels
         public virtual Supplier Supplier { get; set; }
 
         public virtual UnitOfMeasurement UnitOfMeasurement { get; set; }
+
+        public bool isNew()
+        {
+            return IdProduct == 0;
+        }
+
     }
 }

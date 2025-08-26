@@ -19,7 +19,7 @@ namespace Shoes.AppControls
 {
     public partial class ProductUserControl : UserControl
     {
-        Product product;
+        private Product _product;
 
         public ProductUserControl(Product product)
         {
@@ -27,7 +27,7 @@ namespace Shoes.AppControls
             showData(product);
             highlightGreatDiscount(product);
             highlightAbsent(product);
-            this.product = product;
+            this._product = product;
             hideDeleteButton();
         }
 
@@ -109,7 +109,7 @@ namespace Shoes.AppControls
 
             if (toBeDeleted == DialogResult.OK) {
                 
-                Product product = Program.context.Product.Where(p => p.IdProduct == this.product.IdProduct).FirstOrDefault();
+                Product product = Program.context.Product.Where(p => p.IdProduct == this._product.IdProduct).FirstOrDefault();
                 try {
                     Program.context.Product.Remove(product);
                     Program.context.SaveChanges();
@@ -122,6 +122,17 @@ namespace Shoes.AppControls
                 }                
             }
             
+        }
+
+        private void control_Click(object sender, EventArgs e)
+        {
+            CreateUpdateProduct createUpdateProduct = new CreateUpdateProduct(_product);
+            DialogResult productSaved = createUpdateProduct.ShowDialog();
+
+            if (productSaved == DialogResult.OK) {
+                ProductForm productForm = (ProductForm)this.Parent.Parent.Parent.Parent.Parent;
+                productForm.refreshProductList();
+            }
         }
     }
 }
