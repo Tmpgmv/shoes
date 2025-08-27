@@ -131,7 +131,7 @@ namespace Shoes.AppControls
             DialogResult productSaved = createUpdateProduct.ShowDialog();
 
             if (productSaved == DialogResult.OK) {
-                ProductForm productForm = (ProductForm)this.Parent.Parent.Parent.Parent.Parent;
+                ProductForm productForm = (ProductForm)this.Parent.Parent.Parent.Parent;
                 productForm.refreshProductList();
             }
         }

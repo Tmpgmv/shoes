@@ -70,7 +70,7 @@ namespace Shoes.AppControls
 
             if (orderSaved == DialogResult.OK)
             {
-                OrderForm orderForm = (OrderForm)this.Parent.Parent.Parent.Parent.Parent;
+                OrderForm orderForm = (OrderForm)this.Parent.Parent.Parent.Parent;
                 orderForm.refreshOrders();
             }
         }
