@@ -211,6 +211,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="doc\doc.txt" />
     <Content Include="doc\photo_5294264250451239856_x.jpg" />
     <Content Include="doc\photo_5294264250451239890_x.jpg" />
     <Content Include="doc\Reserve\ПУ\Модуль 1\import\1.jpg" />
