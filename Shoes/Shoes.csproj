@@ -173,7 +173,18 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="doc\diagram %281%29.pdf" />
+    <None Include="doc\Reserve\КОД 09.02.07-2-2026 Том 1.pdf" />
+    <None Include="doc\Reserve\Прил_образец_КОД_09.02.07-2-2026.zip" />
+    <None Include="doc\Reserve\ПУ\Модуль 1\import\Tovar.xlsx" />
+    <None Include="doc\Reserve\ПУ\Модуль 1\import\user_import.xlsx" />
+    <None Include="doc\Reserve\ПУ\Модуль 1\import\Заказ_import.xlsx" />
+    <None Include="doc\Reserve\ПУ\Модуль 1\import\Пункты выдачи_import.xlsx" />
+    <None Include="doc\Reserve\ПУ\Модуль 1\Прил_1_ОЗ_КОД 09.02.07-2-2026-М1.docx" />
+    <None Include="doc\Reserve\ПУ\Модуль 1\Прил_2_ОЗ_КОД 09.02.07-2-2026-М1.rar" />
+    <None Include="doc\Reserve\ПУ\Модуль 2\Прил_3_ОЗ_КОД 09.02.07-2-2026-М2.docx" />
+    <None Include="doc\screenshots.docx" />
     <None Include="doc\shoes.drawio" />
+    <None Include="doc\КОД 09.02.07-2-2026 Том 1.pdf" />
     <None Include="grablevskiy_mv_shoesDataSet.xsc">
       <DependentUpon>grablevskiy_mv_shoesDataSet.xsd</DependentUpon>
     </None>
@@ -202,6 +213,19 @@
   <ItemGroup>
     <Content Include="doc\photo_5294264250451239856_x.jpg" />
     <Content Include="doc\photo_5294264250451239890_x.jpg" />
+    <Content Include="doc\Reserve\ПУ\Модуль 1\import\1.jpg" />
+    <Content Include="doc\Reserve\ПУ\Модуль 1\import\10.jpg" />
+    <Content Include="doc\Reserve\ПУ\Модуль 1\import\2.jpg" />
+    <Content Include="doc\Reserve\ПУ\Модуль 1\import\3.jpg" />
+    <Content Include="doc\Reserve\ПУ\Модуль 1\import\4.jpg" />
+    <Content Include="doc\Reserve\ПУ\Модуль 1\import\5.jpg" />
+    <Content Include="doc\Reserve\ПУ\Модуль 1\import\6.jpg" />
+    <Content Include="doc\Reserve\ПУ\Модуль 1\import\7.jpg" />
+    <Content Include="doc\Reserve\ПУ\Модуль 1\import\8.jpg" />
+    <Content Include="doc\Reserve\ПУ\Модуль 1\import\9.jpg" />
+    <Content Include="doc\Reserve\ПУ\Модуль 1\import\Icon.ico" />
+    <Content Include="doc\Reserve\ПУ\Модуль 1\import\Icon.JPG" />
+    <Content Include="doc\Reserve\ПУ\Модуль 1\import\picture.png" />
     <Content Include="doc\script.sql" />
     <Content Include="icon_1755877478.ico" />
     <None Include="Resources\Icon.JPG" />
