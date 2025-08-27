@@ -16,8 +16,7 @@ namespace Shoes.AppService
 
             try
             {
-                File.Delete(getImgPath(fileName));
-                MessageBox.Show("Удалено", "Удалено", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                File.Delete(getImgPath(fileName));                
             }
             catch (Exception e)
             {

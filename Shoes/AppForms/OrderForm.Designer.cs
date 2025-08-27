@@ -42,6 +42,7 @@
             this.backButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.statusTableAdapter = new Shoes.grablevskiy_mv_shoesDataSetTableAdapters.StatusTableAdapter();
+            this.addOrderButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
@@ -61,6 +62,7 @@
             // splitContainer.Panel1
             // 
             this.splitContainer.Panel1.BackColor = System.Drawing.Color.Chartreuse;
+            this.splitContainer.Panel1.Controls.Add(this.addOrderButton);
             this.splitContainer.Panel1.Controls.Add(this.label2);
             this.splitContainer.Panel1.Controls.Add(this.label1);
             this.splitContainer.Panel1.Controls.Add(this.search);
@@ -160,7 +162,7 @@
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(722, 6);
+            this.backButton.Location = new System.Drawing.Point(722, 8);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(75, 23);
             this.backButton.TabIndex = 0;
@@ -180,6 +182,16 @@
             // statusTableAdapter
             // 
             this.statusTableAdapter.ClearBeforeFill = true;
+            // 
+            // addOrderButton
+            // 
+            this.addOrderButton.Location = new System.Drawing.Point(577, 10);
+            this.addOrderButton.Name = "addOrderButton";
+            this.addOrderButton.Size = new System.Drawing.Size(92, 23);
+            this.addOrderButton.TabIndex = 6;
+            this.addOrderButton.Text = "Добавить заказ";
+            this.addOrderButton.UseVisualStyleBackColor = true;
+            this.addOrderButton.Click += new System.EventHandler(this.addOrderButton_Click);
             // 
             // OrderForm
             // 
@@ -221,5 +233,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox search;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
+        private System.Windows.Forms.Button addOrderButton;
     }
 }

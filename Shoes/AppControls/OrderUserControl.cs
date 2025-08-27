@@ -23,6 +23,12 @@ namespace Shoes.AppControls
             InitializeComponent();
             showData(order);
             _order = order;
+            hideDeleteButton();
+        }
+
+        private void hideDeleteButton()
+        {
+            deleteProductButton.Visible = ContextManager.user.isAdmin();
         }
 
         private void showData(Order order)
@@ -43,7 +49,8 @@ namespace Shoes.AppControls
                 try
                 {
                     Program.context.Order.Remove(_order);
-                    Program.context.SaveChanges();                    
+                    Program.context.SaveChanges();
+                    MessageBox.Show("Удалено", "Удалено", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ((OrderForm)this.Parent.Parent.Parent.Parent).refreshOrders();
                 }
                 catch (Exception ex)

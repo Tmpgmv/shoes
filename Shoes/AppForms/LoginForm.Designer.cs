@@ -67,7 +67,7 @@
             this.loginButton.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.loginButton.Location = new System.Drawing.Point(341, 191);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(75, 23);
+            this.loginButton.Size = new System.Drawing.Size(180, 23);
             this.loginButton.TabIndex = 4;
             this.loginButton.Text = "Вход";
             this.loginButton.UseVisualStyleBackColor = false;
@@ -78,7 +78,7 @@
             this.passwordTextBox.Location = new System.Drawing.Point(392, 149);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
-            this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
+            this.passwordTextBox.Size = new System.Drawing.Size(129, 20);
             this.passwordTextBox.TabIndex = 3;
             // 
             // label
@@ -86,15 +86,15 @@
             this.label.AutoSize = true;
             this.label.Location = new System.Drawing.Point(338, 156);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(37, 14);
+            this.label.Size = new System.Drawing.Size(42, 14);
             this.label.TabIndex = 2;
-            this.label.Text = "Логин";
+            this.label.Text = "Пароль";
             // 
             // loginTextBox
             // 
             this.loginTextBox.Location = new System.Drawing.Point(392, 109);
             this.loginTextBox.Name = "loginTextBox";
-            this.loginTextBox.Size = new System.Drawing.Size(100, 20);
+            this.loginTextBox.Size = new System.Drawing.Size(129, 20);
             this.loginTextBox.TabIndex = 1;
             // 
             // label1

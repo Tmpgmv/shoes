@@ -244,6 +244,7 @@
             this.productNameIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productBindingSource, "ProductNameId", true));
             this.productNameIdComboBox.DataSource = this.productNameBindingSource;
             this.productNameIdComboBox.DisplayMember = "ProductName";
+            this.productNameIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.productNameIdComboBox.FormattingEnabled = true;
             this.productNameIdComboBox.Location = new System.Drawing.Point(377, 112);
             this.productNameIdComboBox.Name = "productNameIdComboBox";
@@ -261,6 +262,7 @@
             this.unitOfMeasurementIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productBindingSource, "UnitOfMeasurementId", true));
             this.unitOfMeasurementIdComboBox.DataSource = this.unitOfMeasurementBindingSource;
             this.unitOfMeasurementIdComboBox.DisplayMember = "UnitOfMeasurementName";
+            this.unitOfMeasurementIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unitOfMeasurementIdComboBox.FormattingEnabled = true;
             this.unitOfMeasurementIdComboBox.Location = new System.Drawing.Point(377, 140);
             this.unitOfMeasurementIdComboBox.Name = "unitOfMeasurementIdComboBox";
@@ -287,6 +289,7 @@
             this.supplierIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productBindingSource, "SupplierId", true));
             this.supplierIdComboBox.DataSource = this.supplierBindingSource;
             this.supplierIdComboBox.DisplayMember = "SupplierName";
+            this.supplierIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.supplierIdComboBox.FormattingEnabled = true;
             this.supplierIdComboBox.Location = new System.Drawing.Point(377, 194);
             this.supplierIdComboBox.Name = "supplierIdComboBox";
@@ -304,6 +307,7 @@
             this.manufacturerIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productBindingSource, "ManufacturerId", true));
             this.manufacturerIdComboBox.DataSource = this.manufacturerBindingSource;
             this.manufacturerIdComboBox.DisplayMember = "ManufacturerName";
+            this.manufacturerIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.manufacturerIdComboBox.FormattingEnabled = true;
             this.manufacturerIdComboBox.Location = new System.Drawing.Point(377, 222);
             this.manufacturerIdComboBox.Name = "manufacturerIdComboBox";
@@ -321,6 +325,7 @@
             this.categoryIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productBindingSource, "CategoryId", true));
             this.categoryIdComboBox.DataSource = this.categoryBindingSource;
             this.categoryIdComboBox.DisplayMember = "CategoryName";
+            this.categoryIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.categoryIdComboBox.FormattingEnabled = true;
             this.categoryIdComboBox.Location = new System.Drawing.Point(377, 250);
             this.categoryIdComboBox.Name = "categoryIdComboBox";

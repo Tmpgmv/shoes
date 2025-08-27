@@ -28,6 +28,7 @@ namespace Shoes.AppForms
         private void OrderForm_Shown(object sender, EventArgs e)
         {
             FormManager.prepareForm("Заказы");
+            hideAddOrderButton();
         }
 
         private void OrderForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -65,7 +66,10 @@ namespace Shoes.AppForms
 
             int statusId = getStatusId();
 
-            IQueryable<Order> tmpOrders = Program.context.Order;
+            IQueryable<Order> tmpOrders = Program.context.Order
+                .Include(o => o.Office)
+                .Include(o => o.User)
+                .Include(o => o.Status); ;
 
             if (searchInput != "")
             {
@@ -141,6 +145,22 @@ namespace Shoes.AppForms
         private void statusComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
             refreshOrders();
+        }
+
+        private void hideAddOrderButton()
+        {
+            addOrderButton.Visible = ContextManager.user.isAdmin();
+        }
+
+        private void addOrderButton_Click(object sender, EventArgs e)
+        {
+            CreateUpdateOrder createUpdateOrder = new CreateUpdateOrder();
+            DialogResult orderSaved = createUpdateOrder.ShowDialog();
+
+            if (orderSaved == DialogResult.OK)
+            {
+                refreshOrders();
+            }
         }
     }
 }

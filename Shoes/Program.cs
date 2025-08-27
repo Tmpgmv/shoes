@@ -1,9 +1,6 @@
 ﻿using Shoes.AppForms;
 using Shoes.AppModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Shoes
@@ -12,7 +9,7 @@ namespace Shoes
     {
         public static ContextDB context = new ContextDB();
 
-        
+
 
         /// <summary>
         /// Главная точка входа для приложения.
@@ -20,7 +17,8 @@ namespace Shoes
         [STAThread]
         static void Main()
         {
-            if (!context.Database.Exists()) {
+            if (!context.Database.Exists())
+            {
                 MessageBox.Show("Ошибка соединения с базой данных", "Ошибка соединения с базой данных", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             Application.EnableVisualStyles();

@@ -156,7 +156,6 @@ namespace Shoes.AppForms
             {
                 refreshProductList();
             }
-
         }
 
         private void ordersButton_Click(object sender, EventArgs e)

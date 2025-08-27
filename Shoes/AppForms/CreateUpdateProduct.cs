@@ -58,13 +58,10 @@ namespace Shoes.AppForms
             // TODO: данная строка кода позволяет загрузить данные в таблицу "grablevskiy_mv_shoesDataSet.ProductName". При необходимости она может быть перемещена или удалена.
             this.productNameTableAdapter.Fill(this.grablevskiy_mv_shoesDataSet.ProductName);
 
-
             if (!_product.isNew())
             {
                 productBindingSource.DataSource = _product;
             }
-
-
         }
 
         private void openFileDialogButton_Click(object sender, EventArgs e)
