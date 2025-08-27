@@ -3,17 +3,11 @@ using Shoes.AppModels;
 using Shoes.AppService;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Shoes.AppForms
 {
@@ -45,8 +39,8 @@ namespace Shoes.AppForms
         private void OrderForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "grablevskiy_mv_shoesDataSet.Status". При необходимости она может быть перемещена или удалена.
-            
-            
+
+
             List<Shoes.AppModels.Status> statuses = Program.context.Status.OrderBy(s => s.StatusName).ToList();
             Shoes.AppModels.Status status = new Shoes.AppModels.Status();
             status.StatusName = "Все статусы";
@@ -80,7 +74,7 @@ namespace Shoes.AppForms
                     param
                 ).ToList();
 
-                tmpOrders = tmpOrders.Where(o => ids.Contains(o.IdOrder));                
+                tmpOrders = tmpOrders.Where(o => ids.Contains(o.IdOrder));
             }
 
             if (asc)
@@ -126,8 +120,9 @@ namespace Shoes.AppForms
             flowLayoutPanel.Controls.Clear();
         }
 
-        public void refreshOrders() {
-            clearOrders();            
+        public void refreshOrders()
+        {
+            clearOrders();
             _orders = getOrders();
             showOrders();
         }

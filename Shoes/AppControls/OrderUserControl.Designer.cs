@@ -47,6 +47,7 @@
             this.orderIdlabel.Size = new System.Drawing.Size(16, 13);
             this.orderIdlabel.TabIndex = 0;
             this.orderIdlabel.Text = "Id";
+            this.orderIdlabel.Click += new System.EventHandler(this.OrderUserControl_Click);
             // 
             // statusLabel
             // 
@@ -56,6 +57,7 @@
             this.statusLabel.Size = new System.Drawing.Size(41, 13);
             this.statusLabel.TabIndex = 1;
             this.statusLabel.Text = "Статус";
+            this.statusLabel.Click += new System.EventHandler(this.OrderUserControl_Click);
             // 
             // officeLabel
             // 
@@ -65,6 +67,7 @@
             this.officeLabel.Size = new System.Drawing.Size(115, 13);
             this.officeLabel.TabIndex = 2;
             this.officeLabel.Text = "Адрес пункта выдачи";
+            this.officeLabel.Click += new System.EventHandler(this.OrderUserControl_Click);
             // 
             // orderDateLabel
             // 
@@ -74,6 +77,7 @@
             this.orderDateLabel.Size = new System.Drawing.Size(72, 13);
             this.orderDateLabel.TabIndex = 3;
             this.orderDateLabel.Text = "Дата заказа";
+            this.orderDateLabel.Click += new System.EventHandler(this.OrderUserControl_Click);
             // 
             // panel1
             // 
@@ -84,6 +88,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(104, 86);
             this.panel1.TabIndex = 4;
+            this.panel1.Click += new System.EventHandler(this.OrderUserControl_Click);
             // 
             // deliveryDateLabel
             // 
@@ -93,6 +98,7 @@
             this.deliveryDateLabel.Size = new System.Drawing.Size(33, 13);
             this.deliveryDateLabel.TabIndex = 6;
             this.deliveryDateLabel.Text = "Дата";
+            this.deliveryDateLabel.Click += new System.EventHandler(this.OrderUserControl_Click);
             // 
             // label1
             // 
@@ -102,6 +108,7 @@
             this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Дата доставки";
+            this.label1.Click += new System.EventHandler(this.OrderUserControl_Click);
             // 
             // deleteProductButton
             // 
@@ -128,6 +135,7 @@
             this.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.Name = "OrderUserControl";
             this.Size = new System.Drawing.Size(772, 116);
+            this.Click += new System.EventHandler(this.OrderUserControl_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -62,5 +62,17 @@ namespace Shoes.AppControls
                 }
             }
         }
+
+        private void OrderUserControl_Click(object sender, EventArgs e)
+        {
+            CreateUpdateOrder createUpdateOrder = new CreateUpdateOrder(_order);
+            DialogResult orderSaved = createUpdateOrder.ShowDialog();
+
+            if (orderSaved == DialogResult.OK)
+            {
+                OrderForm orderForm = (OrderForm)this.Parent.Parent.Parent.Parent.Parent;
+                orderForm.refreshOrders();
+            }
+        }
     }
 }

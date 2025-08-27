@@ -189,6 +189,7 @@
             // 
             // officeIdComboBox
             // 
+            this.officeIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.orderBindingSource, "OfficeId", true));
             this.officeIdComboBox.DataSource = this.officeBindingSource;
             this.officeIdComboBox.DisplayMember = "Address";
             this.officeIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -201,6 +202,7 @@
             // 
             // userIdComboBox
             // 
+            this.userIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.orderBindingSource, "UserId", true));
             this.userIdComboBox.DataSource = this.userBindingSource;
             this.userIdComboBox.DisplayMember = "FullName";
             this.userIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -218,6 +220,7 @@
             // 
             // statusIdComboBox
             // 
+            this.statusIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.orderBindingSource, "StatusId", true));
             this.statusIdComboBox.DataSource = this.statusBindingSource;
             this.statusIdComboBox.DisplayMember = "StatusName";
             this.statusIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;

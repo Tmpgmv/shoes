@@ -37,11 +37,16 @@ namespace Shoes.AppForms
             this.statusTableAdapter.Fill(this.grablevskiy_mv_shoesDataSet.Status);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "grablevskiy_mv_shoesDataSet.Office". При необходимости она может быть перемещена или удалена.
             this.officeTableAdapter.Fill(this.grablevskiy_mv_shoesDataSet.Office);
+            
+            if (!_order.isNew())
+            {
+                orderBindingSource.DataSource = _order;
+            }
         }
 
         private void CreateUpdateOrder_Shown(object sender, EventArgs e)
         {
-            FormManager.prepareForm("Добавить/редактировать заказ", false);
+            FormManager.prepareForm("Добавить/редактировать заказ", false);            
         }
 
         private void saveButton_Click(object sender, EventArgs e)
