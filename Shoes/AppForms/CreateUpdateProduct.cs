@@ -123,7 +123,7 @@ namespace Shoes.AppForms
             _product.Sku = skuTextBox.Text;
             _product.ProductNameId = (int)productNameIdComboBox.SelectedValue;
             _product.UnitOfMeasurementId = (int)unitOfMeasurementIdComboBox.SelectedValue;
-            _product.Price = double.Parse(priceTextBox.Text);
+            _product.Price = Math.Round(double.Parse(priceTextBox.Text), 2);
             _product.SupplierId = (int)supplierIdComboBox.SelectedValue;
             _product.ManufacturerId = (int)manufacturerIdComboBox.SelectedValue;
             _product.CategoryId = (int)categoryIdComboBox.SelectedValue;

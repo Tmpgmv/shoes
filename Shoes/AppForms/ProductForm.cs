@@ -51,7 +51,7 @@ namespace Shoes.AppForms
 
             int supplierId = getSupplierId();
 
-            IQueryable<Product> tmpProducts = Program.context.Product;
+            IQueryable<Product> tmpProducts = Program.context.Product.Include(p=>p.Manufacturer);
 
             if (search.Text.Trim() != "")
             {
